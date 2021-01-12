@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #text{
+            color:rgba(0, 255, 34, 0.925);
+            font-size: 40px;
+        }
+        #typewriter-effect{
+            box-sizing: border-box;
+            word-wrap: suppress 10px;
+            display: flex;
+            justify-content: center;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            text-align: center;
+            font-size: 40px;
+            font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <section id="home">
+        <div class="container"></div>
+        <h1 id="typewriter-effect">welcome to <span id="text"></span>|</h1>
+        </div>
+        </section>
+</body>
+<script type="text/javascript">
+    var im = 0, ij = 0;
+    var txtarray = [
+        " ",
+        "Developer",
+        " ",
+        "Designer",
+        " ",
+        "Photographer",];
+    var speed = 80;
+
+    function typeWriter() {
+        if (im < txtarray[ij].length) {
+            document.getElementById("text").innerHTML += txtarray[ij].charAt(im);
+            im++;
+            setTimeout(typeWriter, speed);
+        }
+        else {
+            setTimeout(repeatt, 70);
+        }
+    }
+    typeWriter();
+
+    function repeatt() {
+        document.getElementById("text").innerHTML = "";
+        im = 0;
+        if (ij < txtarray.length - 1) {
+            ij++;
+        }
+        else {
+            ij = 0;
+        }
+        typeWriter();
+    }
+
+</script>
+
+</html>
